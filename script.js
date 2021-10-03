@@ -22,6 +22,13 @@ var useUppercase = window.confirm("Do you want upercase letters?")
 var useNumber = window.confirm("Would you like to include numbers?")
 var useSymbol = window.confirm("Would you like to include symbols?")
 
+// a reminder that the user needs to select a parameter
+
+if (!useLowercase && !useNumber && !useSymbol && !useUppercase) {
+  window.alert("You need to pick something");
+  writePassword();
+}
+
 passwordLength = Prompt("How many characters, between 8-128, would you like you password to be?")
 
 // Write password to the #password input
