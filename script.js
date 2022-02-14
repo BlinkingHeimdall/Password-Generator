@@ -33,14 +33,14 @@ if (!useLowercase && !useNumber && !useSymbol && !useUppercase) {
   writePassword();
 }
 
-var PasswordLength = parseInt(window.prompt("How many characters, between 8-24, would you like you password to be?"))
+var PasswordLength = parseInt(window.prompt("How many characters, between 8-128, would you like you password to be?"))
 
 
 
-// checks for a valid number between 8 and 24
+// checks for a valid number between 8 and 128
 
-while (PasswordLength <8 || PasswordLength >24) {
-  PasswordLength = prompt("The number of characters for you password has to be between 8 and 24");
+while (PasswordLength <8 || PasswordLength >128) {
+  PasswordLength = prompt("The number of characters for you password has to be between 8 and 128");
 
 }
 
