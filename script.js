@@ -5,6 +5,7 @@ var useLowercase
 var useUppercase
 var useSymbol
 var useNumber
+var parameters
 
 // arrays for characters
 
@@ -13,7 +14,6 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var symbol = ["!", "@", "#", "$", "%", "&", "*", "/", "<", ">", "?", "+", "-", "_", "="];
 
-var parameters
 
 // Assignment Code
 
@@ -44,12 +44,13 @@ while (PasswordLength <8 || PasswordLength >128) {
 
 }
 
-//double checks the length is a number
+//below double checks the length is a number
 
 if(Number.isNaN(PasswordLength)) {
   alert("you did not provide a number");
   return null;
 }
+// teh if else below creates teh password by chose parameters
 
 if (useLowercase && useUppercase && useNumber && useSymbol) {
   parameters = lowercase.concat(uppercase, number, symbol);
@@ -96,7 +97,7 @@ else if (useNumber) {
 else { parameters = (symbol); }
 
 
-
+//below is the logic for the function to write the password
 
 var writePassword = "";
 for (var i = 0; i < PasswordLength; i++){
