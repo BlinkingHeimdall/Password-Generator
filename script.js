@@ -50,7 +50,7 @@ if(Number.isNaN(PasswordLength)) {
   alert("you did not provide a number");
   return null;
 }
-// teh if else below creates teh password by chose parameters
+// the if else below creates the password by chosen parameters
 
 if (useLowercase && useUppercase && useNumber && useSymbol) {
   parameters = lowercase.concat(uppercase, number, symbol);
