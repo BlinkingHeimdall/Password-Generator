@@ -52,8 +52,51 @@ if(Number.isNaN(PasswordLength)) {
 }
 
 if (useLowercase && useUppercase && useNumber && useSymbol) {
-  parameters = lowercase.concat(uppercase, number, symbol );
+  parameters = lowercase.concat(uppercase, number, symbol);
 }
+else if (useUppercase && useNumber && useSymbol) {
+  parameters = uppercase.concat(number, symbol);
+}
+else if (useLowercase && useNumber && useSymbol) {
+  parameters = lowercase.concat(number, symbol);
+}
+else if (useUppercase && useLowercase && useSymbol) {
+  parameters = uppercase.concat(lowercase, symbols);
+}
+else if (useUppercase && useLowercase && useNumber) {
+  parameters = uppercase.concat(lowercase, number);
+}
+else if (useUppercase && useNumber) {
+  parameters = uppercase.concat(number);
+}
+else if (useUppercase && useSymbol) {
+  parameters = uppercase.concat(symbol);
+}
+else if (useUppercase && useLowercase) {
+  parameters = uppercase.concat(lowercase);
+}
+else if (useLowercase && useNumber) {
+  parameters = lowercase.concat(number);
+}
+else if (useLowercase && useSymbol) {
+  parameters = lowercase.concat(symbol);
+}
+else if (useNumber && useSymbol) {
+  parameters = number.concat(symbol);
+}
+else if (useUppercase) {
+  parameters = (uppercase);
+}
+else if (useLowercase) {
+  parameters = (lowercase);
+}
+else if (useNumber) {
+  parameters = (number);
+}
+else { parameters = (symbol); }
+
+
+
 
 var writePassword = "";
 for (var i = 0; i < PasswordLength; i++){
