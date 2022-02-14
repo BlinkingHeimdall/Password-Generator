@@ -40,7 +40,7 @@ var PasswordLength = parseInt(window.prompt("How many characters, between 8-24, 
 // checks for a valid number between 8 and 24
 
 while (PasswordLength <8 || PasswordLength >24) {
-  PasswordLength = prompt ("The number of characters for you password has to be between 8 and 24");
+  PasswordLength = prompt("The number of characters for you password has to be between 8 and 24");
 
 }
 
@@ -51,16 +51,21 @@ if(Number.isNaN(PasswordLength)) {
   return null;
 }
 
+if (useLowercase && useUppercase && useNumber && useSymbol) {
+  parameters = lowercase.concat(uppercase, number, symbol );
+}
 
+var writePassword = "";
+for (var i = 0; i < PasswordLength; i++){
+  writePassword += parameters[Math.floor(Math.random() * parameters.length)];
+}
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+var passwordText = document.querySelector ("#password");
+  passwordText.value = writePassword;
 
-  passwordText.value = password;
 
-}
+
 };
 
 // Add event listener to generate button
